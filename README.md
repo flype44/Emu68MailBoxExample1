@@ -21,7 +21,7 @@ It is a good practical now with Emu68 1.1+ to use the new `mailbox.resource` (ht
 ### Copy the Emu68-tools headers from the archive to your amiga SDK headers
 * Emu68-tools\Developer\include ➜ SDK
 
-### Nothing more needed, the resource itself is embedded in the Emu68 1.1+ rom
+Nothing more needed, the resource itself is embedded in the Emu68 1.1+ rom
 
 ## Usage
 
