@@ -34,7 +34,7 @@ Nothing more needed, the resource itself is embedded in the Emu68 1.1+ rom
 
 ### Open the resource
 
-⚠️ Do not try to close `MailboxBase`, contrary to a .library, a .resource doesnt need to be closed on AmigaOS, by design, since it's always available from the rom.
+⚠️ Do not try to close `MailboxBase`, contrary to a `.library`, a `.resource` doesnt need to be closed on AmigaOS, by design, since it's always available from the rom.
 
 ```c
 APTR MailboxBase;
@@ -68,6 +68,10 @@ result[0] = 0;
 MB_VCGenCmd("commands", result, 1024);
 PutStr(result);
 ```
+
+This example outputs the available `vcgencmd` commands :
+
+commands="commands, set_logging, bootloader_config, bootloader_version, cache_flush, codec_enabled, get_mem, get_rsts, measure_clock, measure_temp, measure_volts, get_hvs_asserts, get_config, get_throttled, pmicrd, pmicwr, read_ring_osc, version, readmr, otp_dump, set_vll_dir, set_backlight, get_lcd_info, arbiter, test_result, get_camera, enable_clock, scaling_kernel, scaling_sharpness, hdmi_ntsc_freqs, hdmi_adjust_clock, hdmi_status_show, hvs_update_fields, pwm_speedup, force_audio, hdmi_stream_channels, hdmi_channel_map, display_power, memtest, dispmanx_list, schmoo, render_bar, disk_notify, inuse_notify, sus_suspend, sus_status, sus_is_enabled, sus_stop_test_thread, egl_platform_switch, mem_validate, mem_oom, mem_reloc_stats, hdmi_cvt, hdmi_timings, file, vcos, ap_output_control, ap_output_post_processing"
 
 ### More examples here
 
