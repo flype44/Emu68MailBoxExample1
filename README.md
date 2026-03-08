@@ -32,6 +32,19 @@ Nothing more needed, the resource itself is embedded in the Emu68 1.1+ rom
 #include <proto/mailbox.h>
 ```
 
+### Open the resource
+
+⚠️ Do not try to close `MailboxBase`, contrary to a .library, a .resource doesnt need to be closed on AmigaOS, by design, since it's always available from the rom.
+
+```c
+APTR MailboxBase;
+
+if (MailboxBase = OpenResource("mailbox.resource"))
+{
+    // code start here
+}
+```
+
 ### Use MB_RawCommand() to make a mailbox request
 
 ```c
