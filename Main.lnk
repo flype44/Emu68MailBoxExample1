@@ -1,0 +1,7 @@
+FROM LIB:c.o "Main.o"
+TO "Main"
+LIB LIB:amiga.lib LIB:scm.lib
+    LIB:sc.lib LIB:amiga.lib
+STRIPDEBUG
+NOICONS
+
