@@ -25,16 +25,16 @@ This is a `C89` example that shows how to use the new Emu68 `mailbox.resource`
 ### 5. Use MB_RawCommand() to make a mailbox request
 
 ```c
-	ULONG cmd[8];
-	cmd[0] = 8 * 4;  // Request size in bytes
-	cmd[1] = 0;      // Request return code
-	cmd[2] = tag;    // Request tag identifier
-	cmd[3] = 2 * 4;  // Response size in bytes
-	cmd[4] = 0;      // Response code
-	cmd[5] = arg;    // Response[0]
-	cmd[6] = 0;      // Response[1]
-	cmd[7] = 0;      // End of request
-	MB_RawCommand(cmd);
+ULONG cmd[8];
+cmd[0] = 8 * 4;  // Request size in bytes
+cmd[1] = 0;      // Request return code
+cmd[2] = tag;    // Request tag identifier
+cmd[3] = 2 * 4;  // Response size in bytes
+cmd[4] = 0;      // Response code
+cmd[5] = arg;    // Response[0]
+cmd[6] = 0;      // Response[1]
+cmd[7] = 0;      // End of request
+MB_RawCommand(cmd);
 ```
 
 ### Preview
