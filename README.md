@@ -15,7 +15,7 @@ This is a `C89` example that shows how to use the new Emu68 `mailbox.resource`
 ### 3. Copy the Emu68-tools headers from the archive to your amiga SDK headers
 * Emu68-tools\Developer\include
 
-### 4. Inludes this files in your program
+### 4. Inludes this headers in your program
 
 ```c
 #include <resources/mailbox.h>
