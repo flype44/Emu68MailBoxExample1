@@ -4,7 +4,7 @@ This is a `C89` example that shows how to use the new Emu68 `mailbox.resource`
 
 ## Why use the new mailbox.resource
 
-It is a good practical now with Emu68 1.1+ to use the new `mailbox.resource` (https://github.com/michalsc/mailbox.resource), this ensures safer accesses to the rpi `mailbox`, by benefiting of __semaphoring__, native __big-endian__ conversion, __rpi-aligned__ buffer, and more, especially when multiple programs bangs the rpi `mailbox` __simultaneously__, for example, emu68 drivers + genet + emu68control or emu68meter or emu68envcx at same time.
+It is a good practical now with Emu68 1.1+ to use the new `mailbox.resource` (https://github.com/michalsc/mailbox.resource), this ensures safer accesses to the rpi `mailbox`, by benefiting of __semaphoring__, native __big-endian__ conversion, __rpi-aligned__ buffer, and more, especially when multiple programs bangs the rpi `mailbox` __simultaneously__, for example, Emu68 drivers + Genet + Emu68Control or Emu68Meter or Emu68EnvCX at same time.
 
 ## Requirements
 
