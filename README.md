@@ -2,27 +2,37 @@
 
 This is a `C89` example that shows how to use the new Emu68 `mailbox.resource`
 
-## Requirements:
+## Why use the new mailbox.resource
 
-### 1. Emu68 1.1+ from
+It is a good practical now with Emu68 1.1+ to use the new `mailbox.resource` (https://github.com/michalsc/mailbox.resource), this ensures safer accesses to the rpi `mailbox`, by benefiting of __semaphoring__, native __big-endian__ conversion, __rpi-aligned__ buffer, and more, especially when multiple programs bangs the rpi `mailbox` at __simultaneously__ (for example emu68 drivers + genet + emu68control or emu68meter or emu68envcx etc.).
+
+## Requirements
+
+### Emu68 1.1+ from
 * https://github.com/michalsc/Emu68/releases
 * https://github.com/michalsc/Emu68/releases/download/v1.1.0-alpha.1/Emu68-pistorm.zip
 
-### 2. Emu68-tools for Emu 68 1.1+ from
+### Emu68-tools for Emu 68 1.1+ from
 * https://github.com/michalsc/Emu68-tools/releases
 * https://github.com/michalsc/Emu68-tools/releases/download/v1.1/Emu68-tools.zip
 
-### 3. Copy the Emu68-tools headers from the archive to your amiga SDK headers
-* Emu68-tools\Developer\include
+## Installation
 
-### 4. Inludes this headers in your program
+### Copy the Emu68-tools headers from the archive to your amiga SDK headers
+* Emu68-tools\Developer\include ➜ SDK
+
+### Nothing more needed, the resource itself is embedded in the Emu68 1.1+ rom
+
+## Usage
+
+### Includes this headers in your program
 
 ```c
 #include <resources/mailbox.h>
 #include <proto/mailbox.h>
 ```
 
-### 5. Use MB_RawCommand() to make a mailbox request
+### Use MB_RawCommand() to make a mailbox request
 
 ```c
 ULONG cmd[8];
@@ -36,6 +46,19 @@ cmd[6] = 0;      // Response[1]
 cmd[7] = 0;      // End of request
 MB_RawCommand(cmd);
 ```
+
+### Use MB_VCGenCmd() to make mailbox linux vcgencmd-style requests
+
+```c
+UBYTE result[1024];
+result[0] = 0;
+MB_VCGenCmd("commands", result, 1024);
+PutStr(result);
+```
+
+### More examples here
+
+https://github.com/flype44/Emu68MailBoxResourceTest/tree/main
 
 ### Preview
 <img width="687" height="1080" alt="image" src="Main.png" />
