@@ -1,6 +1,6 @@
 # Emu68MailBoxExample1
 
-This is a `C89` example that shows how to use the new Emu68 `mailbox.resource`
+This is a AmigaOS `C89` minimal example that shows how to use the new Emu68 `mailbox.resource`
 
 ## Why use the new mailbox.resource
 
